@@ -1,8 +1,6 @@
 /**
- * @file Java grammar for tree-sitter
- * @author Ayman Nadeem <aymannadeem@github.com>
- * @author Max Brunsfeld <maxbrunsfeld@gmail.com>
- * @author Amaan Qureshi <amaanq12@gmail.com>
+ * @file Star Wars Galaxies IDL grammar for tree-sitter 
+ * @author Omegaice <950526+Omegaice@users.noreply.github.com>
  * @license MIT
  */
 
@@ -1143,6 +1141,7 @@ module.exports = grammar({
     _simple_type: $ => choice(
       $.void_type,
       $.integral_type,
+      $.signed_integral_type,
       $.floating_point_type,
       $.boolean_type,
       alias($.identifier, $.type_identifier),
@@ -1153,6 +1152,11 @@ module.exports = grammar({
     annotated_type: $ => seq(
       repeat1($._annotation),
       $._unannotated_type,
+    ),
+
+    signed_integral_type: $ => seq(
+      repeat1($.signed_type),
+      $.integral_type,
     ),
 
     scoped_type_identifier: $ => seq(
@@ -1177,6 +1181,11 @@ module.exports = grammar({
     array_type: $ => seq(
       field('element', $._unannotated_type),
       field('dimensions', $.dimensions),
+    ),
+
+    signed_type: _ => choice(
+      'signed',
+      'unsigned',
     ),
 
     integral_type: _ => choice(

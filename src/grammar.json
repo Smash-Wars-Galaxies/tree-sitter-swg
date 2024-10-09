@@ -7034,6 +7034,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "signed_integral_type"
+        },
+        {
+          "type": "SYMBOL",
           "name": "floating_point_type"
         },
         {
@@ -7072,6 +7076,22 @@
         {
           "type": "SYMBOL",
           "name": "_unannotated_type"
+        }
+      ]
+    },
+    "signed_integral_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "signed_type"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "integral_type"
         }
       ]
     },
@@ -7171,6 +7191,19 @@
             "type": "SYMBOL",
             "name": "dimensions"
           }
+        }
+      ]
+    },
+    "signed_type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "signed"
+        },
+        {
+          "type": "STRING",
+          "value": "unsigned"
         }
       ]
     },

@@ -74,6 +74,10 @@
         "named": true
       },
       {
+        "type": "signed_integral_type",
+        "named": true
+      },
+      {
         "type": "type_identifier",
         "named": true
       },
@@ -3329,6 +3333,30 @@
     }
   },
   {
+    "type": "signed_integral_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "integral_type",
+          "named": true
+        },
+        {
+          "type": "signed_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "signed_type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "spread_parameter",
     "named": true,
     "fields": {},
@@ -4460,6 +4488,10 @@
     "named": false
   },
   {
+    "type": "signed",
+    "named": false
+  },
+  {
     "type": "static",
     "named": false
   },
@@ -4522,6 +4554,10 @@
   {
     "type": "underscore_pattern",
     "named": true
+  },
+  {
+    "type": "unsigned",
+    "named": false
   },
   {
     "type": "uses",
