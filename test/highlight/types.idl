@@ -1,36 +1,50 @@
-enum Material {
-  //  ^ type
-  DENIM,
-  // ^ constant
-  CANVAS,
-  // ^ constant
-  SPANDEX_3_PERCENT
-  // ^ constant
+package package.name;
+// <- keyword.import
+
+import another.package;
+// <- keyword.import
+
+include another.package;
+// <- keyword.import
+
+@annotation
+// ^ attribute          
+class PendingMessageList extends ManagedObject {
+// <- keyword.type
+//    ^ type
+//                       ^ keyword
+//                                ^ type
+
+    @dereferenced
+    Vector<unsigned long> pendingMessages;
+//  ^ type
+//         ^ type.builtin
+//                  ^ type.builtin
+
+    transient ChatRoomMap roomMap;
+
+    boolean mute;
+
+    @dereferenced
+    private transient VectorMap<string, unsigned int> moodTypes;
+
+
+    public PendingMessageList() {
+
+    }
+
+    @local
+    public Vector<unsigned long> getPendingMessages() {
+        return pendingMessages;
+    }
+
+    public void clearPendingMessages() {
+        pendingMessages.removeAll();
+    }
+
+    public void addPendingMessage(unsigned long oid) {
+        pendingMessages.add(oid);
+//                          ^ variable.parameter
+    }
 }
 
-class Person {
-  //   ^ type
-
-  Person(string name) {
-    // <- type
-    //    ^ type
-    this.name = name;
-    //            ^ variable
-    this.pants = new Pants<Pocket>();
-    //                ^ type
-    //                       ^ type
-  }
-
-  string getName() {
-    // <- type
-    //    ^ function.method
-    a = this.name;
-    b = new one.two.Three();
-    //      ^ type
-    //          ^ type
-    //              ^ type
-    c = Material.DENIM;
-    //      ^ type
-    //            ^ constant
-  }
-}

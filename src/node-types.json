@@ -136,6 +136,10 @@
         "named": true
       },
       {
+        "type": "include_declaration",
+        "named": true
+      },
+      {
         "type": "interface_declaration",
         "named": true
       },
@@ -2183,6 +2187,29 @@
   },
   {
     "type": "import_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "asterisk",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "scoped_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "include_declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -4389,6 +4416,10 @@
   },
   {
     "type": "import",
+    "named": false
+  },
+  {
+    "type": "include",
     "named": false
   },
   {

@@ -751,6 +751,7 @@ module.exports = grammar({
       $.module_declaration,
       $.package_declaration,
       $.import_declaration,
+      $.include_declaration,
       $.class_declaration,
       $.record_declaration,
       $.interface_declaration,
@@ -838,6 +839,14 @@ module.exports = grammar({
 
     import_declaration: $ => seq(
       'import',
+      optional('static'),
+      $._name,
+      optional(seq('.', $.asterisk)),
+      ';',
+    ),
+
+    include_declaration: $ => seq(
+      'include',
       optional('static'),
       $._name,
       optional(seq('.', $.asterisk)),

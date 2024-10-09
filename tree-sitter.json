@@ -5,8 +5,10 @@
       "camelcase": "SWG",
       "scope": "source.idl",
       "path": ".",
-      "file-types": [".idl"],
-      "injection-regex": "^swg$"
+      "file-types": ["idl"],
+      "injection-regex": "^swg$",
+      "highlights": "queries/highlights.scm",
+      "locals": "queries/locals.scm"
     }
   ],
   "metadata": {

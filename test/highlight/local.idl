@@ -1,0 +1,12 @@
+public void dummyFunction(unsigned long oid) {
+//^ keyword.modifier
+//     ^ type.builtin
+//          ^ function.method
+//                         ^ type.builtin
+//                                 ^ type.builtin
+//                                       ^ variable.parameter
+    vector.add(oid);
+//  ^ variable
+//         ^ function.method.call
+//             ^ variable.parameter
+}
